@@ -11,3 +11,7 @@ create virtualenv
 
 ##### deactivate
 `deactivate` 
+
+
+simply run 
+`pythin3 main.py create`
