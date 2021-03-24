@@ -1,10 +1,12 @@
 import fire
 from enums import Enum
-from generate_angular_dockerfile import GenerateDockerfileForAngular
-from generate_java_dockerfile import GenerateDockerfileForJava
-from generate_node_dockerfile import GenerateDockerfileForNode
 from PyInquirer import style_from_dict, Token, prompt
 from PyInquirer import Validator, ValidationError
+from angular_dockerfile.generate_angular_dockerfile import GenerateDockerfileForAngular
+from java_dockerfile.generate_java_dockerfile import GenerateDockerfileForJava
+from node_dockerfile.generate_node_dockerfile import GenerateDockerfileForNode
+from python_dockerfile.generate_python_dockerfile import GenerateDockerfileForPython
+
 
 def create():
     style = Enum.style
@@ -30,6 +32,9 @@ def create():
     elif selected_language == "node":
         node = GenerateDockerfileForNode()
         node.generate()
+    elif selected_language == "python":
+        python = GenerateDockerfileForPython()
+        python.generate()
     return
 
 
